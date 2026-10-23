@@ -88,7 +88,7 @@ const ANN_ALL = [
   `<b>Subscribe & save 15%</b> on every product · cancel anytime`,
   `Fresh <b>Kanji</b> bottled this week · check your pincode`,
 ];
-const ANN = [["#16151C", "#fff", `<b>Launch prices end in <span data-cd></span></b> · up to 15% off everything`], ["#7B5CFF", "#fff", `Free shipping on orders over <b>₹999</b>`], ["#FF5A4E", INK, `<b>Subscribe & save 15%</b> on every order · skip anytime`], ["#7B5CFF", "#fff", `100% natural · 0 added colour · 0 artificial flavour`], ["#FFE34F", INK, `Any 3 in a box · <b>save 15%</b>`], ["#7B5CFF", "#fff", `Spend ₹1,799 · <b>free Discovery Set</b>`]];
+const ANN = [["#16151C", "#fff", `<b>Launch prices end in <span data-cd></span></b><span class="ann-x"> · up to 15% off everything</span>`], ["#7B5CFF", "#fff", `Free shipping on orders over <b>₹999</b>`], ["#FF5A4E", INK, `<b>Subscribe & save 15%</b> on every order · skip anytime`], ["#7B5CFF", "#fff", `100% natural · 0 added colour · 0 artificial flavour`], ["#FFE34F", INK, `Any 3 in a box · <b>save 15%</b>`], ["#7B5CFF", "#fff", `Spend ₹1,799 · <b>free Discovery Set</b>`]];
 (() => { const a = $("#ann"); a.innerHTML = ANN.map(([, , t], i) => `<div class="${i ? "off" : ""}">${t}</div>`).join(""); let i = 0; const paint = () => { a.style.background = ANN[i][0]; a.style.color = ANN[i][1]; }; paint(); setInterval(() => { const d = $$("div", a); d[i].classList.add("off"); i = (i + 1) % d.length; d[i].classList.remove("off"); paint(); }, 3200); })();
 
 // ---------- header: hide on scroll down ----------
@@ -705,7 +705,7 @@ $("#foot").innerHTML = `<div class="wrap fz">
       <div class="fz-done" hidden><b>You're in. Welcome to the club.</b><span class="mono">Member #000[live] · code HABIT10 is on its way</span><a class="btn btn-nut btn-sm" href="#shop">Use my 10% now →</a></div>
     </form>
   </section>
-  <section class="fz-start"><span class="mono">Start your first 15 days</span><div class="fz-lines">${Object.keys(L).map(k => { const p = P.find(x => x.l === k && x.best); return `<a class="fz-ln" href="#${L[k].r}" style="--c:${L[k].hex};--f:${L[k].fg}"><img src="${img(p.img)}" alt=""><span><b>${L[k].short}</b><small>from ${rupee(Math.min(...P.filter(x => x.l === k).map(x => x.v[0][1])))}</small></span><i>→</i></a>`; }).join("")}<a class="fz-ln fz-box" href="#build-a-box"><span><b>Can't choose?</b><small>Any 3 · save 15%</small></span><i>→</i></a></div></section>
+  <section class="fz-start"><span class="mono">Start your first 15 days</span><div class="fz-lines">${Object.keys(L).map(k => { const p = P.find(x => x.l === k && x.best && x.img); return `<a class="fz-ln" href="#${L[k].r}" style="--c:${L[k].hex};--f:${L[k].fg}"><img src="${img(p.img)}" alt=""><span><b>${L[k].short}</b><small>from ${rupee(Math.min(...P.filter(x => x.l === k).map(x => x.v[0][1])))}</small></span><i>→</i></a>`; }).join("")}<a class="fz-ln fz-box" href="#build-a-box"><span><b>Can't choose?</b><small>Any 3 · save 15%</small></span><i>→</i></a></div></section>
   <section class="fz-cols">
     ${[["Shop", [["#shop", "Shop all"], ["#shop", "Bestsellers"], ["#infusions", "Herbal Infusions"], ["#nutri-mixes", "Nutri-mixes"], ["#kanji", "Kanji"], ["#build-a-box", "Build a box of 3"]]],
        ["The Club", [["#club", `${hm()} Club perks`], ["#subscriptions", "Subscribe & save 15%"], ["#club", "Refer a friend · ₹200"], ["#club", "Habit Wrapped"], ["#", "Spin the record", "spin"]]],

@@ -1114,3 +1114,23 @@ a.mnote .mlink{border-color:var(--ink)}
 @media(max-width:899px){.rp-mrp{font-size:18px}.rp-off{font-size:12px}.rp-save{font-size:13px;padding:6px 12px}.rp-cd{font-size:12px}}
 @media(prefers-reduced-motion:reduce){.rh-s.on .rp-off,.rh-s.on .rp-save{animation:none}.rh-s.on .rp-mrp::after{transition:none;width:112%}}
 @media(max-width:899px){.rh-s .sub{display:none}.reel{aspect-ratio:5/4}}
+/* ===== standalone hosting + mobile footer ===== */
+html,body{margin:0}
+#cart:not(.open){box-shadow:none}
+.ann div{display:block;text-align:center;line-height:36px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 12px}
+.fz-join>*,.fz-start>*,.fz-cols>*{min-width:0}
+@media(max-width:600px){
+  .ann div{font-size:12px}
+  .ann-x{display:none}
+  .foot{padding-block:36px calc(24px + env(safe-area-inset-bottom,0px))}
+  .fz{gap:32px}
+  .fz-jl h2{font-size:clamp(36px,11vw,48px);line-height:.95;overflow-wrap:anywhere}
+  .fz-jl p{font-size:15px}
+  .fz-perks span{font-size:12px;padding:5px 10px}
+  .fz-form{padding:16px;border-radius:20px}
+  .fz-tabs{align-self:stretch}
+  .fz-tabs button{flex:1}
+  .fz-cols{gap:20px 16px;padding-top:24px}
+  .fz-cols a{font-size:14px;padding:6px 0}
+}
+@media(max-width:600px){.fz-lines{grid-template-columns:1fr!important}.fz-ln{min-height:64px}.fz-ln b{font-size:17px}}
