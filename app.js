@@ -180,13 +180,13 @@ const reelHero = () => { const R = REEL.map(r => ({ ...r, p: byId(r.id) })).filt
   <section class="wrap rhero" id="rhero" aria-roledescription="carousel" aria-label="Bestsellers">
     <div class="rh-t">
       <span class="mono k">Dr Aneet's ${hm()} · bestsellers</span>
-      <div class="rh-stack">${R.map((r, i) => `<div class="rh-s" style="--c:${L[r.p.l].hex};--f:${L[r.p.l].fg}" aria-hidden="${i ? "true" : "false"}"><span class="rh-k"><span class="dot"></span>${r.k} · Bestseller</span><h1><span class="ln">${r.h[0]}</span> <mark>${r.h[1]}</mark>${r.h[2] ? ` <span class="ln">${r.h[2]}</span>` : ""}</h1><p class="sub">${r.s}</p><div class="ctas"><a class="btn btn-ink" href="#p-${r.id}">Shop ${r.p.n} · ${rupee(r.p.v[0][1])} <s class="bs">${rupee(r.p.v[0][2])}</s></a><a class="mlink" href="#shop">All bestsellers →</a></div></div>`).join("")}</div>
+      <div class="rh-stack">${R.map((r, i) => `<div class="rh-s" style="--c:${L[r.p.l].hex};--f:${L[r.p.l].fg}" aria-hidden="${i ? "true" : "false"}"><span class="rh-k"><span class="dot"></span>${r.k} · Bestseller</span><h1><span class="ln">${r.h[0]}</span> <mark>${r.h[1]}</mark>${r.h[2] ? ` <span class="ln">${r.h[2]}</span>` : ""}</h1><p class="sub">${r.s}</p><div class="rh-price"><b class="rp-now">${rupee(r.p.v[0][1])}</b><span class="rp-mrp">${rupee(r.p.v[0][2])}</span><span class="rp-off">${Math.round(r.p.off * 100)}% OFF</span><span class="rp-save">You save ${rupee(r.p.v[0][2] - r.p.v[0][1])}</span></div><span class="rp-cd"><span class="pulse"></span>Launch price ends in <b data-cd="s"></b> · then ${rupee(r.p.v[0][2])}</span><div class="ctas"><a class="btn btn-ink" href="#p-${r.id}">Shop ${r.p.n} at ${rupee(r.p.v[0][1])} →</a><a class="mlink" href="#shop">All bestsellers →</a></div></div>`).join("")}</div>
       <div class="rh-dots" role="tablist">${R.map((r, i) => `<button data-r="${i}" role="tab" aria-label="${r.p.n}" style="--c:${L[r.p.l].hex}"></button>`).join("")}</div>
     </div>
     <div class="reel" id="reel">
       <div class="rbars">${R.map(() => "<i><b></b></i>").join("")}</div>
       <div class="rtop"><span class="rav">${hm()}</span><b>makehabit</b><span class="rpl mono">▶ reel</span></div>
-      ${R.map((r, i) => `<a class="rs" href="#p-${r.id}" style="--c:${L[r.p.l].hex}" tabindex="${i ? -1 : 0}"><img src="${img(r.p.img)}" alt="${r.p.n}"><span class="rs-cap"><span><b>${r.p.n}</b><span class="mono">${r.tag}</span></span><span class="rs-go"><s>${rupee(r.p.v[0][2])}</s> ${rupee(r.p.v[0][1])} →</span><span class="roff">${Math.round(r.p.off * 100)}% off</span></span></a>`).join("")}
+      ${R.map((r, i) => `<a class="rs" href="#p-${r.id}" style="--c:${L[r.p.l].hex}" tabindex="${i ? -1 : 0}"><img src="${img(r.p.img)}" alt="${r.p.n}"><span class="rs-cap"><span><b>${r.p.n}</b><span class="mono">${r.tag}</span></span><span class="rs-go"><s>${rupee(r.p.v[0][2])}</s> ${rupee(r.p.v[0][1])} →</span><span class="roff">Save ${rupee(r.p.v[0][2] - r.p.v[0][1])} · ${Math.round(r.p.off * 100)}% off</span></span></a>`).join("")}
       <button class="rprev" aria-label="Previous"></button><button class="rnext" aria-label="Next"></button>
     </div>
   </section>`; };

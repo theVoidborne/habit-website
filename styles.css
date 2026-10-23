@@ -1096,3 +1096,21 @@ a.mnote .mlink{border-color:var(--ink)}
 .dp:hover{background:#fff}
 .r5-all{background:var(--ink);color:#fff;--sweep:var(--inf)}
 .rs-cap .roff{top:-34px;left:0;box-shadow:0 6px 14px -8px rgba(22,21,28,.5)}
+/* ===== hero reel: the deal is the loudest thing on screen ===== */
+.rh-price{display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
+.rp-now{font:900 clamp(36px,5vw,52px)/1 var(--display);letter-spacing:-.03em;color:var(--ink)}
+.rp-mrp{position:relative;font:600 clamp(20px,2.4vw,26px) var(--display);color:var(--muted)}
+.rp-mrp::after{content:"";position:absolute;left:-6%;top:50%;height:3px;width:0;border-radius:2px;background:#FF5A4E;transform:rotate(-10deg);transform-origin:left}
+.rh-s.on .rp-mrp::after{width:112%;transition:width .45s cubic-bezier(.7,0,.2,1) .75s}
+.rp-off{background:#FFE34F;color:var(--ink);font:800 14px var(--mono);padding:6px 12px;border-radius:10px;transform:rotate(-5deg);box-shadow:0 8px 18px -10px rgba(22,21,28,.6)}
+.rp-save{background:#1F8A4C;color:#fff;font:800 15px var(--body);padding:7px 14px;border-radius:999px}
+.rh-s.on .rp-off{animation:popin .5s cubic-bezier(.3,1.7,.5,1) 1s both}
+.rh-s.on .rp-save{animation:popin .5s cubic-bezier(.3,1.7,.5,1) 1.15s both}
+@keyframes popin{from{opacity:0;transform:scale(.4) rotate(-14deg)}}
+.rp-cd{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;background:#FFE9E6;color:#A12A21;border-radius:999px;padding:6px 14px;font:600 13px var(--mono)}
+.rp-cd b{font-weight:700}
+.rs-go s{color:#C2362B;text-decoration-color:#FF5A4E;text-decoration-thickness:2.5px}
+.rs-cap .roff{background:#FF5A4E;color:var(--ink);font-weight:800;padding:6px 12px}
+@media(max-width:899px){.rp-mrp{font-size:18px}.rp-off{font-size:12px}.rp-save{font-size:13px;padding:6px 12px}.rp-cd{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.rh-s.on .rp-off,.rh-s.on .rp-save{animation:none}.rh-s.on .rp-mrp::after{transition:none;width:112%}}
+@media(max-width:899px){.rh-s .sub{display:none}.reel{aspect-ratio:5/4}}
