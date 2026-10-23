@@ -1134,3 +1134,18 @@ html,body{margin:0}
   .fz-cols a{font-size:14px;padding:6px 0}
 }
 @media(max-width:600px){.fz-lines{grid-template-columns:1fr!important}.fz-ln{min-height:64px}.fz-ln b{font-size:17px}}
+/* ===== mobile QA fixes ===== */
+#view .split>*,#view .pdp>*{min-width:0}
+.buybox h1{font-size:clamp(26px,8.5vw,34px);overflow-wrap:anywhere}
+.ferr{display:block;color:#C2362B;font-weight:700;font-size:13px;margin-top:4px}
+.fz .ferr{color:#FF8A80}
+[aria-invalid="true"]{border-color:#C2362B!important;box-shadow:0 0 0 3px rgba(194,54,43,.18)}
+details.faq summary{min-height:44px;align-items:center}
+.vcard.mini .vb{min-height:34px}
+.ci .qty button,.cart .qty button{min-width:40px;min-height:40px}
+#view .mlink{display:inline-block;padding-block:8px}
+@media(max-width:360px){
+  .btn{white-space:normal;text-align:center;line-height:1.2;padding-block:8px}
+  .rh-s .btn{white-space:normal}
+  .cbtns .btn{font-size:12px}
+}
